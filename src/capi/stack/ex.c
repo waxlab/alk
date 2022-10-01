@@ -5,12 +5,12 @@
 --| lua_gettop(L) returns the top of stack index, i.e, stack size
 */
 
-int table(lua_State *L) {
+static int table(lua_State *L) {
   return 0;
 }
 
 
-int args(lua_State *L) {
+static int args(lua_State *L) {
   lua_pushinteger(L, lua_gettop(L));
   return 1;
 }
@@ -18,13 +18,13 @@ int args(lua_State *L) {
 /* In order to represent the real state of the stack on function
 ** calling, we need to push the last first, as once pushed the
 ** stack can be changed */
-int edges(lua_State *L) {
+static int edges(lua_State *L) {
   lua_pushvalue(L,-1);
   lua_pushvalue(L,1);
   return 2;
 }
 
-int returns(lua_State *L) {
+static int returns(lua_State *L) {
   int before, after;
   before = lua_gettop(L);
   lua_pushstring(L, "hi");
@@ -34,8 +34,7 @@ int returns(lua_State *L) {
   return 3;
 }
 
-
-int luaopen_alk_stack_c(lua_State *L) {
+int luaopen_alk_capi_stack_c(lua_State *L) {
 
   luaL_Reg module[] = {
     { "args",    args    },

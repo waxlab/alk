@@ -1,4 +1,4 @@
-local stack = require "alk.stack.c"
+local stack = require "alk.capi.stack.c"
 
 assert( stack.args("o") == 1 )
 assert( stack.args("o",10) == 2)

@@ -35,7 +35,7 @@ and check for its validity, still changing and playing with the values.
 3. Then you just need to pick the folder name under the `./src`
 and run it:
 
-    ./lua ./run.lua stack
+    ./run capi.stack
 
 It is expected the code be compiled and returns no error. As you change
 the code, as every test should be in an `assert()` call any error

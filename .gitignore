@@ -2,5 +2,6 @@
 /lua
 /lua_modules
 /.luarocks
+/tree
 **.o
 **.so
