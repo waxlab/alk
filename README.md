@@ -1,3 +1,5 @@
+![ALK](https://repository-images.githubusercontent.com/544033573/bbb40228-393c-4f5e-ad65-25094ea08674)
+
 # ALK - A Lua Knowledge
 
 The main purpose of this project is gather Lua examples in a comprehensible
