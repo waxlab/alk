@@ -82,7 +82,7 @@ end
 
 function command.sparse()
   local cmd = table.concat {
-    [[ for i in src/*c ; do ]],
+    [[ for i in $(find src/capi -name "*c") ; do ]],
       [[echo sparsing "$i" ; ]],
       [[sparse -Wsparse-error ]],
         [[ -Wno-declaration-after-statement ]],

@@ -1,5 +1,6 @@
 #include <lua.h>
 #include <lauxlib.h>
+#include "../capi.h"
 
 /*
 --| lua_gettop(L) returns the top of stack index, i.e, stack size

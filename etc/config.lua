@@ -8,7 +8,8 @@ bin = { }
 -- ./src/lib - The C code containing the Lua C Api logic
 -- ./src/macros
 clib = {
-    { "alk.capi.stack.c", { "capi/stack/ex.c" } }
+    { "alk.capi.stack.c", { "capi/stack/ex.c" } },
+    { "alk.capi.table.c", { "capi/table/ex.c" } }
 }
 
 cbin = {
