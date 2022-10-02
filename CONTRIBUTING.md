@@ -1,41 +1,84 @@
-# CONTRIBUTING
+# CONTRIBUTING GUIDELINES
 
-As you can see this project has documentation inside Lua and C files.
-To be more useful to everyone some rules should be observed:
+You are free to fork this repo and use it in any way you want to.
+We encourage you to share and spread the knowledge built with this project.
 
-* **Lua files should not have output**, i.e, people should know what Lua is
-doing without see output. You can accomplish that adding tests with `assert`
-functions, in a way that the reader/visitor/developer/magician that came to
-the code know exactly to what the code was evaluated to. Also doing this, when
-running code you will be certain that example has proven correct.
-
-* **Always test under multiple Lua versions**. Check the main project documentation
-to know which Lua versions should be supported.
+To not turn it on a mess, only will be accepted pull requests following these
+characteristics:
 
 
-## Configure your text editor
+### Always test under multiple Lua versions
 
-For C and Lua files our coding style uses:
+By now we strive to make it very helpful to community, so add tests to be
+supported under multiple Lua versions from 5.1 to 5.4. Tests and examples for
+flavors of Lua will not be accepted (ex. Luajit, Luvit, Löve) as it has
+potential to be messy from the Lua beginner until the advanced. The same line
+of thought is extended for packages that restricts to a single Lua flavor or
+version (like OpenResty or LuaPower).
 
-* `2` spaces for indentation
+### Code style
 
-* `80` column wide
+ALK should be accessible to people under different environments and devices.
 
-* C curly braces opening `{` should be kept in the line where the expression is
-opened, be in function declaratinos or in conditional/loops.
+* **Test instead output** Lua files should not have output. People should know
+the expected result of a Lua code without need to run the code or see the output.
+You can accomplish that using the Lua `assert()` function so when running code
+you will be certain that the provided example has proven to be correct.
 
-The main reason to adopt this approach is:
+* **Small screens and narrow editors** Today many people use editors with
+support to side by side edition. Also casual programmers or people looking for
+a readily documentation on small screen devices. To address the most wider
+audience in a simple way, we restrict the submissions code that has `80` column
+wide text and `2` spaces per indentation level applyable to the comments and
+code.
 
-* The majority of IDEs support side-by-side edition. Some support even
-multiple vertical splits. 80 columns and 2 spaces as indentation give the
-reader/developer possibility to improve its work editing a source and its
-testings or even reading documentation.
+* **Lua comments** should not be block comments ( started as `--[[` ); Always use
+the single line notation. On comments feel free to use plain text or markdown
+notation only. LuaDoc or EmmyLuaCodeStyle or other notation different from
+markdown will not be accepted.
 
-* It widens the device use possibilities, giving accessibility to develop and
-and read the code even in mobile (ex: Termux) or older devices.
+* **C comments** should only use the C89 syntax. Continuation lines for comments
+should start with `**`:
 
-* It enforces the code simplicity. It is paradoxal, but it keep your code
-vertical, at the same time that reinforce the functions to be smaller,
-easy to read and simple to understand.
+```C
+/* This is a single line comment. */
 
+/*
+** This is a multiline comment
+** That spans for more than one line
+*/
+```
 
+* **C blocks** should keep the open curly braces `{` on the same line of the previous
+expression be it function declarations, structs, enums, conditionals or loops.
+
+* **Functions signatures** can be documented as simple and clearer as possible
+using `:` to describe expected types:
+
+```Lua
+-- sum( a:number, b:number ) : number
+function sum(a, b) return a+b end
+
+-- keys( t:{} ): {}
+function keys(t)
+  local r={}
+  for k,_ in pairs(t) do
+    r[#r+1] = k
+  end
+  return r
+end
+```
+
+**Why it is important?**
+
+I really expect it can be very useful for Lua community. Also expect that in
+the future we can spend a time generating a good source for free offline
+documentation to be used on consoles, distributed with editors or accessible
+through ereaders. Keep a consistent code style is good for the reader and for
+the future of project.
+
+## Copyright and License
+
+You are responsible by what you commit. Submitting a code you assume that you
+own the copyrights, is the author and aggree to release the code and the text
+submitted with it to the ALK project under the MIT Licensing.

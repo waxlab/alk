@@ -22,6 +22,20 @@ local luabin = {
   ["5.4"] = sh.whereis("lua%s","5.4","54"),
 }
 
+local
+function list_modules()
+  local proc = io.popen('find ./src -name "*.lua" -or -name "*.c"','r')
+  if not proc then return end
+  local list = {}
+  local line
+  while true do
+    line = proc:read()
+    if not line then break end
+    list[line:gsub('./src/',''):gsub('/[^/]+$',''):gsub('/','.')]=1
+  end
+  for k,_ in pairs(list) do print(k) end
+end
+
 
 function test_compile(luaver, module)
   local compile = false
@@ -73,6 +87,7 @@ end
 
 function command.test()
   local module = arg[2]
+  if not module then return list_modules() end
   for i,luaver in ipairs(luaVersions) do
     test_compile(luaver, module:gsub('$','.c'):gsub('^','alk.'))
     test_lua(luaver, module)
