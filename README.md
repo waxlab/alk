@@ -8,7 +8,7 @@ where you can test and document ways of doing things in Lua in a fast way, like
 if it was a gist.
 
 Fork it, learn Lua, play with it and feel. Feel free to help the project
-following the [Contributing Guidelines](GUIDELINES.md).
+following the [Contributing Guidelines](CONTRIBUTING.md).
 
 
 ## How to use
