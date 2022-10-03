@@ -2,10 +2,10 @@
 
 # ALK - A Lua Knowledge
 
-ALK is a Lua package created only to let the programmer use as reference or
-sandbox. It is intended to be used not as a project dependency, but a notebook
-where you can test and document ways of doing things in Lua in a fast way, like
-if it was a gist.
+ALK is a Lua project created be used by programmers as reference or playground.
+It is intended to be used not as a project dependency, but a notebook where you
+can test and document ways of doing things in Lua in a fast way, like if it was
+a gist.
 
 Fork it, learn Lua, play with it and feel. Feel free to help the project
 following the [Contributing Guidelines](CONTRIBUTING.md).
@@ -34,39 +34,26 @@ and check for its validity, still changing and playing with the values.
     git clone https://github.com/waxlab/alk.git alk
     cd alk
 
-2. Choose the target Lua version you want to play with
-
-    luarocks init --lua-version 5.4
-
-3. To list the lessons/tests run:
+2. To list the lessons/tests run:
 
     ./run test
 
-4. Pick one of the list and run:
+3. Pick one of the list and run:
 
-    ./run test capi.stack
+    ./run test capi.stack.args
 
-It is expected the code be compiled and returns no error. As you change
-the code, as every test should be in an `assert()` call so any unexpected
-result will be shown on console.
+
+All these tests are inside a Lua file. In case of C tests and lessons, the
+C file should have the same name as the Lua file (except by the extension).
 
 
 ## Structure
 
 All the relevant tests and lessos are under the `src` folder.
-For a test `capi.stack` there are two modules, a Lua and a C one.
+For a test `capi.stack.borders` there are two files:
+* `src/capi/stack/borders.lua` containing the tests
+* `src/capi/stack/borders.c` containing the Lua C Api examples and that is
+recompiled every time you issue `./run test capi.stack.borders`
 
-Lua module is `src/capi/stack/ex.lua` and C module is `src/capi/stack/ex.c`.
-Observe that to disambiguate the `require()` call, the Lua
-module is `capi.stack` while the C one is `capi.stack.c`
-
-To add a Lua module just drop it with the `ex.lua` name under the
-module directory.
-
-To add a C module drop the C module with its Lua corresponding
-tests under the directory and add it to `etc/config.lua`.
-
-I think that this is the most complex part of the ALK using.
-
-Hope you enjoy the road to the moon :)
+Enjoy the Lua coding :)
 
