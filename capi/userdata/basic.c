@@ -1,13 +1,13 @@
 /*
-** Basic example for userdata.
-**
-** Userdata is a value in C allocated by the Lua `lua_newuserdata()` function.
-** This data then receive a metatable to which can be added Lua functions.
-**
-** With userdata you can basically implement types in Lua to handle directly
-** values only possible (or that are more efficient) on C side, as well as
-** represent types for other C libraries.
-*/
+ * Basic example for userdata.
+ *
+ * Userdata is a value in C allocated by the Lua `lua_newuserdata()` function.
+ * This data then receive a metatable to which can be added Lua functions.
+ *
+ * With userdata you can basically implement types in Lua to handle directly
+ * values only possible (or that are more efficient) on C side, as well as
+ * represent types for other C libraries.
+ */
 
 #include <lua.h>
 #include <lauxlib.h>
@@ -26,9 +26,7 @@ static int rotate(lua_State *L);
 int luaopen_capi_userdata_basic(lua_State *L);
 
 
-/*
-** Type implementations
-*/
+/* Type implementations */
 
 static const luaL_Reg coord_mt[] = {
   {"rotate", rotate},
@@ -42,9 +40,7 @@ static const luaL_Reg module[] = {
 };
 
 
-/*
-** The public function used by Lua to open the module
-*/
+/* The public function used by Lua to open the module */
 int luaopen_capi_userdata_basic(lua_State *L) {
   #if ( LUA_VERSION_NUM <= 501 )
     /* The metatable for Lua 5.1 */
@@ -70,10 +66,7 @@ int luaopen_capi_userdata_basic(lua_State *L) {
 }
 
 
-/*
-** Function implementations
-*/
-
+/* Function implementations */
 
 static int ucreate(lua_State *L) {
   int x = luaL_checkinteger(L,1);

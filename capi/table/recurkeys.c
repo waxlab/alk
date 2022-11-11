@@ -17,7 +17,8 @@ static void getkeys(lua_State *L, int idx, recurse_res *res) {
       strcpy(res->r[res->c], lua_tostring(L, -2));
       res->c++;
       if (lua_type(L,-1) == LUA_TTABLE)
-        /* as the value is on -1 (the top) we pass recursively
+        /*
+         * as the value is on -1 (the top) we pass recursively
          * the positive position of the index on stack
          */
         getkeys(L, lua_gettop(L), res);

@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 /*
-** This example unpacks table values much like the Lua `unpack` function.
-** Here is show the unpack only for string and number values.
-** While it works, should there a lot of room to improvements.
-*/
+ * This example unpacks table values much like the Lua `unpack` function.
+ * Here is show the unpack only for string and number values.
+ * While it works, should there a lot of room to improvements.
+ */
 
 
 /* As example we treat only values if they are string or number. */

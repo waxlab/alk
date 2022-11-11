@@ -1,6 +1,10 @@
 # CONTRIBUTING GUIDELINES
 
-You are free to fork this repo and use it in any way you want to.
+The official repository can be found in [Codeberg](https://codeberg.org/waxlab/alk).
+There you can discuss and open issues. We also have backups on
+[Github](https://github.com/waxlab/alk) and [Gitlab](https://gitlab.com/waxlab/alk).
+
+You are free to fork this repo and use it any way you want to.
 We encourage you to share and spread the knowledge built with this project.
 
 To not turn it on a mess, only will be accepted pull requests following these
@@ -44,9 +48,9 @@ should start with `**`:
 /* This is a single line comment. */
 
 /*
-** This is a multiline comment
-** That spans for more than one line
-*/
+ * This is a multiline comment
+ * That spans for more than one line
+ */
 ```
 
 * **C blocks** should keep the open curly braces `{` on the same line of the previous

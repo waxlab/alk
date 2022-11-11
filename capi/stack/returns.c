@@ -2,10 +2,10 @@
 #include <lauxlib.h>
 
 /*
-** This function allow you to check what is on each extremity of the stack.
-** In order to represent the real state of the stack on function calling, we
-** need to push the last first, as once pushed the stack can be changed
-*/
+ * This function allow you to check what is on each extremity of the stack.
+ * In order to represent the real state of the stack on function calling, we
+ * need to push the last first, as once pushed the stack can be changed
+ */
 
 static int example(lua_State *L) {
   int before, after;

@@ -13,10 +13,10 @@ static int example(lua_State *L) {
   luaL_checktype(L, 1, LUA_TTABLE);
 
   /*
-  ** it makes the top of stack (-1) be nil
-  ** the lua_next will look for the nil key on the (L,1)
-  ** Indicating that the next item is the first one
-  */
+   * it makes the top of stack (-1) be nil
+   * the lua_next will look for the nil key on the (L,1)
+   * Indicating that the next item is the first one
+   */
   lua_pushnil(L);
 
   while(lua_next(L,1)){
@@ -29,9 +29,9 @@ static int example(lua_State *L) {
     }
 
     /*
-    ** It is necessary to remove the value from the top
-    ** of stack or lua_next will act as if it was the key
-    */
+     * It is necessary to remove the value from the top
+     * of stack or lua_next will act as if it was the key
+     */
     lua_pop(L,1);
   }
   for (i=0; i<res; i++) lua_pushstring(L, keys[i]);

@@ -2,9 +2,9 @@
 #include <lauxlib.h>
 
 /*
-** This simple example returns to Lua the number of the items on stack;
-** The number returned should be equal to the number of passed arguments.
-*/
+ * This simple example returns to Lua the number of the items on stack;
+ * The number returned should be equal to the number of passed arguments.
+ */
 
 static int example(lua_State *L) {
   lua_pushinteger(L, lua_gettop(L));
