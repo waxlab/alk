@@ -2,6 +2,7 @@
 /lua_modules
 /.luarocks
 /.out
+/.ccls*
 /tree
 **.o
 **.so
